@@ -12,12 +12,18 @@ class Agent(object):
     # ==========================================================================
     #                                                                 __INIT__()
     # ==========================================================================
-    def __init__(self):
+    def __init__(self, actions_func):
+        """
+        :param actions_func: a function object
+            actions func is a function that when you feed it a state as an
+            argument, you get back a list of available actions.
+        """
         self.last_state = None
         self.state = None
         self.last_action = None
         self.win_tally = {"win": 0, "lose": 0, "draw": 0}
         self.learning = True
+        self.get_available_actions = actions_func
 
     # ==========================================================================
     #                                                             SET_TO_LEARN()
@@ -42,10 +48,9 @@ class Agent(object):
     # ==========================================================================
     #                                                             CHOSE_ACTION()
     # ==========================================================================
-    def chose_action(self, state, available_actions):
+    def chose_action(self, state):
         """
-        Given a state, and a list of available actions, it makes a decision of
-        which action to take.
+        Given a state it makes a decision of which action to take.
         """
         pass
 
