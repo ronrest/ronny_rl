@@ -42,7 +42,11 @@ class Agent(object):
     # ==========================================================================
     #                                                             CHOSE_ACTION()
     # ==========================================================================
-    def chose_action(self, state):
+    def chose_action(self, state, available_actions):
+        """
+        Given a state, and a list of available actions, it makes a decision of
+        which action to take.
+        """
         pass
 
     # ==========================================================================
